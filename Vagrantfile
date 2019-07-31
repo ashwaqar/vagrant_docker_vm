@@ -7,9 +7,9 @@ Vagrant.configure("2") do |config|
     config.vm.synced_folder "./share", "/home/vagrant/share", type: "rsync"
     config.vm.network :forwarded_port, host: 80, guest: 80
     config.vm.provision :shell, path: "./install.sh"
-  config.vm.provider "virtualbox" do |v|
-    v.name = "Docker_centos"
-    v.memory = 1024
-    v.cpus = 2
+  config.vm.provider "virtualbox" do |vb|
+    vb.name = "Docker_centos"
+    vb.memory = 1024
+    vb.cpus = 2
   end
 end
